@@ -1,0 +1,61 @@
+********** processes * *********************************************************************************
+1	RFswitch (set to 1 to activate synchrotron motion)
+1	betatronSwitch (set to 1 to activate betatron motion)
+1	raddampSwitch (set to 1 to activate radiation damping and quantum excitation)
+1	IBSswitch (set to 1 to activate ibs)
+0	collimationSwitch (set to 1 to activate losses on aperture cuts)
+0	blowupSwitch (set to 1 to activate artificial blowup - ADT loss maps etc)
+1	collisionSwitch (set to 1 to activate collisions)
+0	levellingSwitch (set to 1 to activate levelling of luminosity)
+********** output selection ***************************************************************************
+1   writeLuminositySwitch (switch for writing luminosity)
+1	writeIntensitySwitch (switch for writing intensities)
+1	writeEmittanceSwitch (switch for writing emittances)
+1	writeIBSSwitch (switch for writing IBS)
+0	writeCollImpactsxbetatron (switch for writing collimation impact x betatron)
+0	writeCollImpactsybetatron (switch for writing collimation impact y betatron)
+0	writeCollImpactsxmomentum (switch for writing collimation impact x momentum)
+0	writeAllCoordSwitch (can lead to large output)
+0	writeMountSwitch (can lead to large output)
+1	writeEqTimeSwitch (real time)
+1   writeScreenSummarySwitch (switch for writing summary of settings to the screen at simulation start)
+********* ring, general parameters ********************************************************************
+1000  10000  20000.0   100  12763			nturns,nMacro,timeRatio (=real turns/sim. turns), nwrite,iseed  
+55.7  26658.8832  2963.5	   			gammat,circ,gamma0,
+0.0  360  -16.e6  35640					vrf,nharm,vrf2,nharm2
+64.31  59.32  2. 2.  0.00  1.1  0.0 			tunex,tuney,chromx,chromy,dqmin (coupling between x-py, y-px),k2L,k2Lskew (thin sextupole strengths)
+208  82  2.5e-9  		   			aatom,qatom,thib=RF period
+LHCB1-HLLHC-xa100.tfs
+*********** starting conditions ********************************************************************
+5.06158E-10  5.06158E-10  1.7e8 			emix1, emiy1, pnumber1 (parameters for	beam1)
+5.06158E-10  5.06158E-10  1.7e8 			emix2, emiy2, pnumber2 (parameters for	beam2)
+3 2						longCoordMethod (0:parabolic with smokering, 1: read from file, 2: bi-Gaussian, 3: pseudo-Gaussian,exactly matched), transvCoordMethod (1 or 2)
+0.0794  0.0794					rmsBunchLen1, rmsBunchLen2 (only used for longCoordMethod=2,3)
+1.137e-4  1.137e-4				rmsDelta1,rmsDelta2 (only used for longCoordMethod=2)
+1.25e-9 1.25e-9  0.01  0.75  5  		tauhat1, tauhat2, bunchLenPrecis(for longCoordMethod=3), power(for longCoordMethod=0), alint (for longCoordMethod=0)
+startCoord.dat
+startCoord.dat
+*********** radiation damping ********************************************************************
+lattic	     					radMethod: can be manual (input next line), approx (smooth latt. I4=0), or lattic (rad. int., twiss file required)
+23519.0   47072.0   4.64e-12   7.43e-8 	tradlong(s),tradperp(s),siglong (eq. sigma from raddamp-exit.),sigperp(m) (only used with manual method)
+2784.32 					rho0 (dipole bend. radius in m, used only with approx)
+**********  IBS *********************************************************************************
+nagaitsev					ibsMethod: can be nagaitsev, piwiSmooth, piwLattice, modPiwLatt, baneApprox or interpolat
+0  20.0 					coupleIBS (0 gives separate growth rates, 1 gives same growth in x and y), coulombLog (used in nagaitsev method)
+1  500 	 					fracibstot, nbins
+/home/roderik/My_CERN_work/piwinski-ibs/ibs-rates-LHC-collision.dat
+/home/roderik/My_CERN_work/bane-ibs/gBaneTab.dat
+********** collimation *******************************************************************************
+5.06158E-10   5.7      0	  stdev		refEmxy,cutoffAmpl (ref. sigma at which init. distr. is cut), collimAvgSwitch,emitMethod (stdev,stcal,exfit)
+5.7    10.0   131.7    2.15    			nSigCutBeta, nSigCutMom (momentum cut in beta-sigma), betaxMom,dispxMom
+********** blowup ************************************************************************************
+0.02    0.d0     unSum				pxKickFac(sigma),pyKickFac(sigma),blowupMethod (unifo,gauss,unSum)
+*********collisions***********************************************************************************
+6a						collRoutine (1d is slow but without assumptions on distributions, 6a is fast with assumed Gaussian transverse)
+2  515.0  	        			noIPs with _different_ parameters,sigI (cross section for particle removal in collisions) 
+1  100  0					nbunches, longIntBins, angleSwitch (set to one for alternating angle betw. hor. and ver plane, used with 1d)
+0.5   35.e-6    1  6.36e24 1			betaSX, half crossing angle, multiplicity (noIPs with these parameters) at first IP, lumimax (max lumi for levelling), levIPSwitch (levelling on is 1) at first IP
+0.55  142.5e-6  2  6.36e24 1			same for second IP ...
+
+
+
