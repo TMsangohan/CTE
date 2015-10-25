@@ -1,0 +1,5 @@
+dos2unix batchit*
+dos2unix runit
+chmod 744 runit
+./runit
+bjobs

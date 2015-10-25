@@ -1,0 +1,29 @@
+#! /bin/sh
+
+$LSB_TRAPSIGS
+$LSB_RCP1
+$LSB_RCP2
+$LSB_RCP3
+# LSBATCH: User input
+( cat <<_USER_\SCRIPT_
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/collider_time_evolution* ./
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/LHCB1-CollIons2011-6.503.tfs ./
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/collider_time_evolution_cool_example.in collider_time_evolution_cool.in
+./collider_time_evolution_cool
+mkdir /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
+cp *.out /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
+cp collider_time_evolution_cool.in /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
+
+_USER_SCRIPT_
+) > $LSB_CHKFILENAME.shell
+chmod u+x $LSB_CHKFILENAME.shell
+/usr/local/lsf/etc/job_starter '$LSB_JOBFILENAME.shell'
+saveExit=$?
+/bin/rm -f $LSB_JOBFILENAME.shell
+(exit $saveExit)
+
+ExitStat=$?
+wait
+# LSBATCH: End user input
+true
+exit `expr $? "|" $ExitStat`

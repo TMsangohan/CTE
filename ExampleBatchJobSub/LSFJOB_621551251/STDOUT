@@ -1,0 +1,220 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/mschauma/621551251> on <>
+
+
+
+ *************************************
+ *      COLLIDER TIME EVOLUTION      *
+ *************************************
+
+ processing input file ... 
+       Stochastic Cooling is :         OFF
+
+     nturns=        4000 , # macro part. B1=       30000 , # macro part. B2=       30000
+
+     timeRatio=   10121.000000000000     
+     equivalent time (hours) =    1.0000000000000000     
+
+     RF motion is:         ON
+
+     betatron motion is:   ON
+         -->reference beta functions:
+           circ/(2*pi*tunex) =    65.975634249350023      ,  circ/(2*pi*tuney) =    71.525506381923464     
+
+     Collimation is:       OFF
+
+     Collisions are:       ON
+        --> using collision routine:6a
+        -->   1.0000000000000000       IPs with beta*=  0.50000000000000000      m, phi/2=   0.0000000000000000     
+        -->   2.0000000000000000       IPs with beta*=  0.50000000000000000      m, phi/2=   0.0000000000000000     
+
+     Levelling is:       OFF
+
+ nresamp,nfft        4000        4096
+rm: cannot remove `intensity.out': No such file or directory
+rm: cannot remove `luminosity.out': No such file or directory
+rm: cannot remove `ibs.out': No such file or directory
+rm: cannot remove `mountain*.out': No such file or directory
+rm: cannot remove `emittance.out': No such file or directory
+rm: cannot remove `csmon*.out': No such file or directory
+rm: cannot remove `fort.*': No such file or directory
+rm: cannot remove `res_den.out': No such file or directory
+rm: cannot remove `z.out': No such file or directory
+rm: cannot remove `ws.out': No such file or directory
+rm: cannot remove `kickerVoltage*.out': No such file or directory
+     Reading twiss file LHCB1-CollIons2011-6.503.tfs
+
+     IBS is:               ON
+        -->using method: nagaitsev 
+
+     Radiation damping is: ON
+        -->using method: lattic
+           calculating radiation integrals: 
+           I2=  2.24488379436944482E-003 I3=  7.99182774325693265E-007 I4x=  1.09425767669075796E-006 I4y=   0.0000000000000000      I5x=  2.11852341623472474E-008 I5y=  9.37388262758427220E-011
+           calculating radiation damping times and equilibrium beam sizes:
+           Tx=   12.743761571483089      h,  Ts=   6.3672230075444771      h,  sigPt=  1.17375660610066467E-004 ex=  8.32277185589150636E-017 m
+
+ ... collider_time_evolution_cool.in read
+
+ generating longitudinal coordinates
+        iterating: bunch length =   0.10171004231344717       m.
+        iterating: bunch length =   9.95982686324771299E-002  m.
+
+ generating transverse coordinates
+ emitx from fit =   -73516053864804.938     
+ emity from fit =   -73516053864804.938     
+ emitx from sigma =   5.01836355369674866E-010
+ emity from sigma =   5.07784093542273380E-010
+ emitx from calc. =   5.01836355369674969E-010
+ emity from calc. =   5.07784093542273483E-010
+
+ generating longitudinal coordinates
+        iterating: bunch length =   0.10129555884431671       m.
+        iterating: bunch length =   9.96472485774831523E-002  m.
+
+ generating transverse coordinates
+ emitx from fit =   -73516053864804.938     
+ emity from fit =   -73516053864804.938     
+ emitx from sigma =   5.06026190009815681E-010
+ emity from sigma =   5.03492620290530826E-010
+ emitx from calc. =   5.06026190009815681E-010
+ emity from calc. =   5.03492620290530826E-010
+
+
+ Starting main loop ...
+
+      turn      np1        np2     ex1(m)        ey1(m)         sigt1(s)        FWHM_1(s)       ex2(m)         ey2(m)        sigt2(s)        FWHM_2(s)     
+ _______________________________________________________________________________________________________________________________________________________________________
+         0     30000     30000    0.50184E-09    0.50778E-09    0.33222E-09    0.69870E-09    0.50603E-09    0.50349E-09    0.33238E-09    0.70880E-09
+ luminosity=  6.82311472156618366E+024 cm^-2 s^-1, geom. reduction factor=  0.98125109482846118     
+
+       100     29787     29783    0.50274E-09    0.50747E-09    0.33314E-09    0.70598E-09    0.50739E-09    0.50357E-09    0.33283E-09    0.72314E-09
+ luminosity=  6.71839475095163791E+024 cm^-2 s^-1, geom. reduction factor=  0.98116616736554962     
+
+       200     29606     29579    0.50403E-09    0.50713E-09    0.33162E-09    0.69287E-09    0.50839E-09    0.50315E-09    0.33295E-09    0.70750E-09
+ luminosity=  6.62751103918835467E+024 cm^-2 s^-1, geom. reduction factor=  0.98124280519405771     
+
+       300     29416     29356    0.50504E-09    0.50682E-09    0.33134E-09    0.69870E-09    0.50988E-09    0.50299E-09    0.33236E-09    0.70996E-09
+ luminosity=  6.52882256605157836E+024 cm^-2 s^-1, geom. reduction factor=  0.98129532687943899     
+
+       400     29193     29140    0.50627E-09    0.50645E-09    0.33175E-09    0.70588E-09    0.51087E-09    0.50316E-09    0.33054E-09    0.69667E-09
+ luminosity=  6.42363184197467612E+024 cm^-2 s^-1, geom. reduction factor=  0.98137240955897520     
+
+       500     28961     28942    0.50775E-09    0.50634E-09    0.33011E-09    0.70314E-09    0.51215E-09    0.50278E-09    0.33069E-09    0.70521E-09
+ luminosity=  6.32213313544831985E+024 cm^-2 s^-1, geom. reduction factor=  0.98144410843091068     
+
+       600     28736     28744    0.50929E-09    0.50636E-09    0.32817E-09    0.70721E-09    0.51357E-09    0.50241E-09    0.33123E-09    0.72765E-09
+ luminosity=  6.22296196565912468E+024 cm^-2 s^-1, geom. reduction factor=  0.98151486217314055     
+
+       700     28523     28542    0.51041E-09    0.50631E-09    0.32865E-09    0.69864E-09    0.51467E-09    0.50186E-09    0.32958E-09    0.70703E-09
+ luminosity=  6.12813015461951162E+024 cm^-2 s^-1, geom. reduction factor=  0.98158054627626878     
+
+       800     28337     28330    0.51181E-09    0.50593E-09    0.32912E-09    0.72942E-09    0.51616E-09    0.50172E-09    0.32734E-09    0.70678E-09
+ luminosity=  6.03341092834439037E+024 cm^-2 s^-1, geom. reduction factor=  0.98166387874971739     
+
+       900     28148     28143    0.51345E-09    0.50551E-09    0.32639E-09    0.72659E-09    0.51749E-09    0.50152E-09    0.32880E-09    0.73585E-09
+ luminosity=  5.94696105406375368E+024 cm^-2 s^-1, geom. reduction factor=  0.98173297176290120     
+
+      1000     27969     27960    0.51426E-09    0.50528E-09    0.32549E-09    0.69212E-09    0.51870E-09    0.50111E-09    0.33020E-09    0.70326E-09
+ luminosity=  5.86617234220346618E+024 cm^-2 s^-1, geom. reduction factor=  0.98170252874286845     
+
+      1100     27782     27776    0.51536E-09    0.50486E-09    0.32808E-09    0.72125E-09    0.51980E-09    0.50085E-09    0.32736E-09    0.72824E-09
+ luminosity=  5.78460520700277558E+024 cm^-2 s^-1, geom. reduction factor=  0.98170819927100450     
+
+      1200     27634     27595    0.51683E-09    0.50426E-09    0.32719E-09    0.71473E-09    0.52090E-09    0.50045E-09    0.32504E-09    0.72759E-09
+ luminosity=  5.71122150610936320E+024 cm^-2 s^-1, geom. reduction factor=  0.98188146335879301     
+
+      1300     27455     27441    0.51779E-09    0.50408E-09    0.32365E-09    0.72593E-09    0.52150E-09    0.50025E-09    0.32817E-09    0.72642E-09
+ luminosity=  5.63857613414029469E+024 cm^-2 s^-1, geom. reduction factor=  0.98189752717037670     
+
+      1400     27284     27261    0.51898E-09    0.50368E-09    0.32494E-09    0.70280E-09    0.52253E-09    0.49997E-09    0.32769E-09    0.72078E-09
+ luminosity=  5.56192854352255664E+024 cm^-2 s^-1, geom. reduction factor=  0.98185904218677178     
+
+      1500     27124     27087    0.51957E-09    0.50345E-09    0.32634E-09    0.73107E-09    0.52372E-09    0.49957E-09    0.32454E-09    0.71647E-09
+ luminosity=  5.49051609861216067E+024 cm^-2 s^-1, geom. reduction factor=  0.98195096208240085     
+
+      1600     26926     26917    0.52114E-09    0.50317E-09    0.32409E-09    0.72880E-09    0.52514E-09    0.49957E-09    0.32580E-09    0.74201E-09
+ luminosity=  5.40872641036504190E+024 cm^-2 s^-1, geom. reduction factor=  0.98199383141790875     
+
+      1700     26767     26756    0.52183E-09    0.50250E-09    0.32329E-09    0.71565E-09    0.52595E-09    0.49965E-09    0.32595E-09    0.72418E-09
+ luminosity=  5.34079867604702682E+024 cm^-2 s^-1, geom. reduction factor=  0.98202630481889330     
+
+      1800     26602     26578    0.52306E-09    0.50235E-09    0.32335E-09    0.70941E-09    0.52645E-09    0.49938E-09    0.32431E-09    0.70330E-09
+ luminosity=  5.26870900499086131E+024 cm^-2 s^-1, geom. reduction factor=  0.98211118371283612     
+
+      1900     26416     26419    0.52410E-09    0.50241E-09    0.32352E-09    0.73014E-09    0.52722E-09    0.49901E-09    0.32460E-09    0.71284E-09
+ luminosity=  5.19536279521637561E+024 cm^-2 s^-1, geom. reduction factor=  0.98209196454158842     
+
+      2000     26244     26266    0.52571E-09    0.50197E-09    0.32367E-09    0.71423E-09    0.52807E-09    0.49856E-09    0.32477E-09    0.72044E-09
+ luminosity=  5.12705885719245051E+024 cm^-2 s^-1, geom. reduction factor=  0.98206449539949414     
+
+      2100     26086     26113    0.52694E-09    0.50208E-09    0.32264E-09    0.71507E-09    0.52891E-09    0.49815E-09    0.32339E-09    0.71716E-09
+ luminosity=  5.06154711187220991E+024 cm^-2 s^-1, geom. reduction factor=  0.98219276362613106     
+
+      2200     25927     25965    0.52782E-09    0.50190E-09    0.32264E-09    0.73567E-09    0.52980E-09    0.49791E-09    0.32387E-09    0.70070E-09
+ luminosity=  4.99826500110231010E+024 cm^-2 s^-1, geom. reduction factor=  0.98216550948412751     
+
+      2300     25757     25809    0.52862E-09    0.50169E-09    0.32162E-09    0.70778E-09    0.53112E-09    0.49774E-09    0.32299E-09    0.74159E-09
+ luminosity=  4.93110961963823500E+024 cm^-2 s^-1, geom. reduction factor=  0.98226245351171348     
+
+      2400     25611     25674    0.52994E-09    0.50094E-09    0.32250E-09    0.71431E-09    0.53209E-09    0.49745E-09    0.32135E-09    0.71969E-09
+ luminosity=  4.87539462260941541E+024 cm^-2 s^-1, geom. reduction factor=  0.98230194810196370     
+
+      2500     25453     25531    0.53112E-09    0.50096E-09    0.32198E-09    0.70819E-09    0.53244E-09    0.49713E-09    0.32269E-09    0.69058E-09
+ luminosity=  4.81466048720660604E+024 cm^-2 s^-1, geom. reduction factor=  0.98226138918577299     
+
+      2600     25293     25387    0.53210E-09    0.50068E-09    0.32057E-09    0.69808E-09    0.53339E-09    0.49698E-09    0.32360E-09    0.72698E-09
+ luminosity=  4.75399133803424426E+024 cm^-2 s^-1, geom. reduction factor=  0.98228774867350332     
+
+      2700     25125     25238    0.53336E-09    0.50020E-09    0.32325E-09    0.73800E-09    0.53346E-09    0.49642E-09    0.32076E-09    0.72862E-09
+ luminosity=  4.69299945347860554E+024 cm^-2 s^-1, geom. reduction factor=  0.98229570079441797     
+
+      2800     25005     25111    0.53395E-09    0.49942E-09    0.32126E-09    0.73702E-09    0.53420E-09    0.49597E-09    0.32176E-09    0.71682E-09
+ luminosity=  4.64749615583979227E+024 cm^-2 s^-1, geom. reduction factor=  0.98233394371869276     
+
+      2900     24853     24968    0.53481E-09    0.49920E-09    0.31820E-09    0.71452E-09    0.53556E-09    0.49536E-09    0.32075E-09    0.71429E-09
+ luminosity=  4.58970583434282960E+024 cm^-2 s^-1, geom. reduction factor=  0.98255567292913770     
+
+      3000     24691     24811    0.53559E-09    0.49909E-09    0.32182E-09    0.71738E-09    0.53637E-09    0.49483E-09    0.31951E-09    0.70657E-09
+ luminosity=  4.52793808017662352E+024 cm^-2 s^-1, geom. reduction factor=  0.98242989827582861     
+
+      3100     24540     24662    0.53612E-09    0.49925E-09    0.32148E-09    0.70644E-09    0.53780E-09    0.49453E-09    0.32138E-09    0.75462E-09
+ luminosity=  4.46862454873864799E+024 cm^-2 s^-1, geom. reduction factor=  0.98234791327197557     
+
+      3200     24409     24524    0.53731E-09    0.49905E-09    0.31753E-09    0.73774E-09    0.53882E-09    0.49442E-09    0.31975E-09    0.72759E-09
+ luminosity=  4.41669341886775214E+024 cm^-2 s^-1, geom. reduction factor=  0.98263360022045532     
+
+      3300     24270     24403    0.53778E-09    0.49891E-09    0.31859E-09    0.73328E-09    0.53964E-09    0.49427E-09    0.31876E-09    0.71863E-09
+ luminosity=  4.36635191854836454E+024 cm^-2 s^-1, geom. reduction factor=  0.98263396552805360     
+
+      3400     24144     24253    0.53836E-09    0.49855E-09    0.32122E-09    0.71545E-09    0.54073E-09    0.49376E-09    0.32069E-09    0.71904E-09
+ luminosity=  4.31405646144215166E+024 cm^-2 s^-1, geom. reduction factor=  0.98240047567207966     
+
+      3500     24007     24119    0.53928E-09    0.49808E-09    0.31893E-09    0.72904E-09    0.54138E-09    0.49341E-09    0.31861E-09    0.71541E-09
+ luminosity=  4.26564091916568443E+024 cm^-2 s^-1, geom. reduction factor=  0.98262183768261968     
+
+      3600     23881     23991    0.54022E-09    0.49759E-09    0.31632E-09    0.71940E-09    0.54246E-09    0.49293E-09    0.31804E-09    0.71101E-09
+ luminosity=  4.22065328437314898E+024 cm^-2 s^-1, geom. reduction factor=  0.98278184065932317     
+
+      3700     23768     23882    0.54127E-09    0.49708E-09    0.31992E-09    0.73920E-09    0.54324E-09    0.49244E-09    0.31960E-09    0.73349E-09
+ luminosity=  4.17830629838664658E+024 cm^-2 s^-1, geom. reduction factor=  0.98251661315309302     
+
+      3800     23632     23749    0.54218E-09    0.49676E-09    0.31901E-09    0.73425E-09    0.54420E-09    0.49193E-09    0.31823E-09    0.71949E-09
+ luminosity=  4.12894875330158565E+024 cm^-2 s^-1, geom. reduction factor=  0.98264044365662495     
+
+      3900     23501     23625    0.54333E-09    0.49688E-09    0.31597E-09    0.72524E-09    0.54433E-09    0.49152E-09    0.31842E-09    0.72338E-09
+ luminosity=  4.08316051503825132E+024 cm^-2 s^-1, geom. reduction factor=  0.98277945899947361     
+  writing last turn
+
+      4000     23351     23487    0.54349E-09    0.49694E-09    0.31935E-09    0.70138E-09    0.54504E-09    0.49109E-09    0.31767E-09    0.70868E-09
+ luminosity=  4.03051159791626258E+024 cm^-2 s^-1, geom. reduction factor=  0.98264195614972016     
+ _______________________________________________________________________________________________________________________
+
+ COLLIDER TIME EVOLUTION: run finished normally
+ **********************************************
+
+Job finished at Wed Feb 11 11:11:47 CET 2015 on node 
+ under linux version Scientific Linux CERN SLC release 6.6 (Carbon)
+
+CERN statistics: This process used approximately : 0:18:58 KSI2K hours (1138 KSI2K seconds)
+                 This process corresponds to     : 1:14:00 HS06  hours (4440 HS06  seconds)

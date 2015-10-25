@@ -1,0 +1,11 @@
+cp /afs/cern.ch/user/m/mschauma/PhD/collider_time_evolution/StochasticCooling/CTE/collider_time_evolution* ./
+cp /afs/cern.ch/user/m/mschauma/PhD/collider_time_evolution/StochasticCooling/CTE/LHCB1-CollIons2011-6.503.tfs ./
+cp /afs/cern.ch/user/m/mschauma/PhD/collider_time_evolution/StochasticCooling/CTE/CoolingAt7TeV/7TeV_1DCooling/collider_time_evolution_cool_1Dcooling_s_gain50e7_0IBS.in collider_time_evolution_cool.in
+./collider_time_evolution_cool
+mkdir /afs/cern.ch/work/m/mschauma/collider_time_evolution/
+mkdir /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/
+mkdir /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/StochasticCooling/CTE/CoolingAt7TeV
+mkdir /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/StochasticCooling/CTE/CoolingAt7TeV/7TeV_1DCooling
+mkdir /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/StochasticCooling/CTE/CoolingAt7TeV/7TeV_1DCooling/1Dcooling_s_gain50e7_0IBS
+cp *.out /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/StochasticCooling/CTE/CoolingAt7TeV/7TeV_1DCooling/1Dcooling_s_gain50e7_0IBS
+cp collider_time_evolution_cool.in /afs/cern.ch/work/m/mschauma/collider_time_evolution/results/StochasticCooling/CTE/CoolingAt7TeV/7TeV_1DCooling/1Dcooling_s_gain50e7_0IBS

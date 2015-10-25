@@ -1,0 +1,2 @@
+bsub -R type==SLC6_64 -q 2nd -J test_name < batchit
+

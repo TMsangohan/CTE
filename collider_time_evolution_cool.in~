@@ -1,0 +1,54 @@
+**********	processes	**********************************************************************************
+1	RFswitch	(set	to	1	to	activate	synchrotron	motion)
+1	betatronSwitch	(set	to	1	to	activate	betatron	motion)
+1	raddampSwitch	(set	to	1	to	activate	radiation	damping	and	quantum	excitation)
+1	IBSswitch	(set	to	1	to	activate	ibs)
+0	collimationSwitch	(set	to	1	to	activate	losses	on	aperture	cuts)
+1	collisionSwitch	(set	to	1	to	activate	collisions)
+0	levellingSwitch	(set	to	1	to	activate	levelling	the	luminosity)
+1	stochCoolSwitch	(set	to	1	to	activate	collisions)
+*********	ring,	general	parameters	********************************************************************
+16000	30000	6	100	0	0	12763	nturns,nMacro,eqTime,	nwrite,writeAllCoordSwitch,writeMountSwitch,iseed
+55.7	26658.8832	2963.544275041691	gammat,circ,gamma0,
+0.	360	-1.6e7	35640	vrf,nharm,vrf2,nharm2
+64.31	59.32	2.	2.	0.	tunex,tuney,chromx,chromy,dqmin	(coupling	between	x-py,	y-px)
+208	82	2.5e-9	aatom,qatom,thib
+LHCB1-CollIons2011-6.503.tfs
+***********	starting	conditions	********************************************************************
+5.062e-10	5.062e-10	1.4e8	emix1,emiy1,	pnumber1,	(parameters	for	beam1)
+5.062e-10	5.062e-10	1.4e8	emix2,emiy2,	pnumber2	(parameters	for	beam2)
+3	longCoordMethod	(0:parabolic	with	smokering,	1:	read	from	file,	2:	bi-Gaussian,	3:	pseudo-Gaussian,exactly	matched)
+0.1	0.1	rmsBunchLen1,,	rmsBunchLen2	(only	used	for	longCoordMethod=2,3)
+0.0002	0.0002	rmsDelta1,rmsDelta2	(only	used	for	longCoordMethod=2)
+1.25e-9	1.25e-9	0.01	6	5	tauhat1,	tauhat2,	bunchLenPrecis(for	longCoordMethod=3),	power(for	longCoordMethod=0),	alint	(for	longCoordMethod=0)
+/home/roderik/My_CERN_work/blaskiewicz-code/rhic-track-round-beams/allcoord-B1-15000-from-old-run.txt
+/home/roderik/My_CERN_work/blaskiewicz-code/rhic-track-round-beams/allcoord-B1-15000-from-old-run.txt
+***********	radiation	damping	********************************************************************
+lattic	radMethod:	can	be	manual	(input	next	line),	approx	(smooth	latt.	I4=0),	or	lattic	(rad.	int.,	twiss	file	required)
+23519.	47072.	4.64e-12	7.43e-8	tradlong(s),tradperp(s),siglong	(eq.	sigma	from	raddamp-exit.),sigperp(m)	(only	used	with	manual	method)
+2784.32	rho0	(dipole	bend.	radius	in	m,	used	only	with	approx)
+**********	IBS	*********************************************************************************
+nagaitsev	ibsMethod:	can	be	nagaitsev,	piwiSmooth,	piwLattice,	modPiwLatt,	baneApprox	or	interpolat
+0	18.7	coupleIBS	(0	gives	separate	growth	rates,	1	gives	same	growth	in	x	and	y),	coulombLog	(used	in	nagaitsev	method)
+1	500	fracibstot,	nbins
+/home/roderik/My_CERN_work/blaskiewicz-code/piwinski-ibs/ibs-rates-LHC-collision.dat
+/home/roderik/My_CERN_work/blaskiewicz-code/bane-ibs/gBaneTab.dat
+**********	Stochastic	Cooling	************************************************************************
+5000000000	20000000000	0	0	0.62587	fimpedx0,	fimpedx1	(upper	and	lower	freq),	gainx0,	gainx1,	fracx	(fraction	of	turn	delay	for	cooling	in	x)
+5000000000	20000000000	0	0	0.62795	fimpedy0,	fimpedy1	(upper	and	lower	freq),	gainy0,	gainy1,	fracy	(fraction	of	turn	delay	for	cooling	in	y)
+5000000000	20000000000	500000000	500000000	0.625	fimpeds0,	fimpeds1	(upper	and	lower	freq),	gains0,	gains1,	fracs	(fraction	of	turn	delay	for	longitudinal	cooling)
+0	0	0	nextra	(extra	turns	with	cooling	off),	ntdelay	(0	for	1	turn	delay,	1	for	cascaded	1	turn	delays),	nturnon
+0.	0.	533570.	ampbtf,	phibtf,	harmbtf	(amplitude,	phase	and	carrier	harmonic	for	btf	kick)
+4000	0.	0.	0.01	8.e-12	nresamp	(number	of	samples	used	for	ffts),	coffsetx,	coffsety	(closed	orbit	offset),	snrinv	(inverse	signal-to-noise),taupart
+1.e9	vmaxreal	(max	voltage	[volts]	on	longitudinal	kicker)
+1	writeStochCoolSwitch
+**********	collimation	*******************************************************************************
+6.25e-7	15	1	stdev	refEmxy,cutoffAmpl	(ref.	sigma	at	which	init.	distr.	is	cut),	collimAvgSwitch,emitMethod	(stdev,stcal,exfit)
+10.	10.	131.7	2.15	nSigCutBeta,	nSigCutMom	(momentum	cut	in	beta-sigma),	betaxMom,dispxMom
+*********collisions***********************************************************************************
+6a	collRoutine	(1d	is	slow	but	without	assumptions	on	distributions,	6a	is	fast	with	assumed	Gaussian	transverse)
+2	515.	noIPs	with	_different_	parameters,sigI	(cross	section	for	particle	removal	in	collisions),
+1	100	0	nbunches,	longIntBins,	angleSwitch	(set	to	one	for	alternating	angle	betw.	hor.	and	ver	plane,	used	with	1d)
+0.5	0.	1	4.e30	0	betaSX,	half	crossing	angle,	multiplicity	(noIPs	with	these	parameters),	lumimax	(max	lumi	for	levelling),	levIPSwitch	(levelling	on=1)	at	first	IP
+0.5	0.	2	4.e30	0	same	for	second	IP	...
+

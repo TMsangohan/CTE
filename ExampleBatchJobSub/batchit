@@ -1,0 +1,7 @@
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/collider_time_evolution* ./
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/LHCB1-CollIons2011-6.503.tfs ./
+cp /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/collider_time_evolution_cool_example.in collider_time_evolution_cool.in
+./collider_time_evolution_cool
+mkdir /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
+cp *.out /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
+cp collider_time_evolution_cool.in /afs/cern.ch/eng/sl/ilhc/MS/CTE/code/ExampleBatchJobSub/exampleData
